@@ -1,0 +1,276 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=DM+Serif+Display:ital@0;1&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* ─── Light Mode — Warm Ivory × Deep Indigo ─────────────────── */
+    --background: 40 30% 97%;          /* warm ivory-white #F9F7F4    */
+    --foreground: 230 30% 18%;         /* deep navy-slate #1E2340     */
+
+    --card: 36 40% 99%;                /* almost white warm #FFFDF9   */
+    --card-foreground: 230 30% 18%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 230 30% 18%;
+
+    --primary: 234 60% 55%;            /* rich indigo #4A5FD1         */
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 262 50% 65%;          /* soft violet #8B73CC         */
+    --secondary-foreground: 230 30% 18%;
+
+    --muted: 38 25% 93%;               /* warm sand #EDE9E1           */
+    --muted-foreground: 230 15% 50%;   /* medium slate #6B7494        */
+
+    --accent: 234 60% 97%;             /* whisper indigo #F2F4FD      */
+    --accent-foreground: 234 60% 45%;
+
+    --destructive: 4 74% 63%;
+    --destructive-foreground: 0 0% 100%;
+
+    --success: 158 55% 40%;
+    --warning: 44 87% 55%;
+    --info: 234 60% 55%;
+
+    --border: 38 20% 88%;              /* warm linen border #E0D9CC   */
+    --input: 38 20% 88%;
+    --ring: 234 60% 55%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 40 30% 97%;
+    --sidebar-foreground: 230 30% 18%;
+    --sidebar-primary: 234 60% 55%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 234 60% 97%;
+    --sidebar-accent-foreground: 234 60% 45%;
+    --sidebar-border: 38 20% 88%;
+    --sidebar-ring: 234 60% 55%;
+
+    /* Custom design tokens */
+    --surface: 0 0% 100%;
+    --glow: 234 60% 55%;
+    --glow-secondary: 262 50% 65%;
+    --glass-bg: 0 0% 100%;
+    --glass-opacity: 0.80;
+    --glass-border: 38 20% 60%;
+    --glass-border-opacity: 0.15;
+
+    /* Hero gradient stops (light) */
+    --hero-stop-1: 40 50% 96%;
+    --hero-stop-2: 240 40% 95%;
+    --hero-stop-3: 262 40% 94%;
+  }
+
+  .dark {
+    /* ─── Dark Mode — Premium Engineering Lab ────────────────────── */
+    --background: 216 18% 7%;
+    --foreground: 213 30% 93%;
+
+    --card: 216 25% 11%;
+    --card-foreground: 213 30% 93%;
+
+    --popover: 216 25% 11%;
+    --popover-foreground: 213 30% 93%;
+
+    --primary: 234 70% 65%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 262 60% 70%;
+    --secondary-foreground: 216 18% 7%;
+
+    --muted: 216 20% 14%;
+    --muted-foreground: 215 12% 58%;
+
+    --accent: 216 25% 14%;
+    --accent-foreground: 234 70% 65%;
+
+    --destructive: 4 74% 63%;
+    --destructive-foreground: 0 0% 100%;
+
+    --success: 158 55% 42%;
+    --warning: 44 87% 62%;
+    --info: 234 70% 65%;
+
+    --border: 0 0% 100%;
+    --input: 216 25% 16%;
+    --ring: 234 70% 65%;
+
+    --sidebar-background: 216 18% 7%;
+    --sidebar-foreground: 213 30% 93%;
+    --sidebar-primary: 234 70% 65%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 216 25% 14%;
+    --sidebar-accent-foreground: 213 30% 93%;
+    --sidebar-border: 0 0% 100%;
+    --sidebar-ring: 234 70% 65%;
+
+    --surface: 216 25% 11%;
+    --glow: 234 70% 65%;
+    --glow-secondary: 262 60% 70%;
+    --glass-bg: 216 25% 11%;
+    --glass-opacity: 0.75;
+    --glass-border: 0 0% 100%;
+    --glass-border-opacity: 0.07;
+
+    --hero-stop-1: 216 18% 7%;
+    --hero-stop-2: 216 25% 11%;
+    --hero-stop-3: 222 47% 12%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border/[0.08];
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    transition: background-color 350ms ease, color 350ms ease;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Space Grotesk', sans-serif;
+  }
+}
+
+/* ── Custom scrollbar (light) ──────────────────────────────────────── */
+:root:not(.dark) ::-webkit-scrollbar { width: 6px; }
+:root:not(.dark) ::-webkit-scrollbar-track { background: hsl(40 30% 95%); }
+:root:not(.dark) ::-webkit-scrollbar-thumb { background: hsl(234 40% 78%); border-radius: 99px; }
+:root:not(.dark) ::-webkit-scrollbar-thumb:hover { background: hsl(234 60% 55%); }
+
+/* ── Custom scrollbar (dark) ───────────────────────────────────────── */
+.dark ::-webkit-scrollbar { width: 6px; }
+.dark ::-webkit-scrollbar-track { background: hsl(216 18% 7%); }
+.dark ::-webkit-scrollbar-thumb { background: hsl(216 25% 20%); border-radius: 99px; }
+.dark ::-webkit-scrollbar-thumb:hover { background: hsl(234 70% 65%); }
+
+@layer utilities {
+  /* ── Glass card ─── */
+  .glass-card {
+    @apply backdrop-blur-xl border rounded-xl;
+    background: hsl(var(--glass-bg) / var(--glass-opacity));
+    border-color: hsl(var(--glass-border) / var(--glass-border-opacity));
+  }
+
+  /* ── Shadows ─── */
+  .glow-shadow {
+    box-shadow: 0 0 28px hsl(var(--glow) / 0.28);
+  }
+  .glow-shadow-sm {
+    box-shadow: 0 0 12px hsl(var(--glow) / 0.16);
+  }
+  .soft-shadow {
+    box-shadow: 0 4px 32px hsl(230 30% 18% / 0.08), 0 1px 3px hsl(230 30% 18% / 0.05);
+  }
+  .soft-shadow-lg {
+    box-shadow: 0 12px 48px hsl(230 30% 18% / 0.10), 0 4px 12px hsl(230 30% 18% / 0.06);
+  }
+
+  /* ── Hero gradients ─── */
+  .hero-gradient-light {
+    background:
+      radial-gradient(ellipse 80% 60% at 65% 40%, hsl(262 60% 92% / 0.6) 0%, transparent 60%),
+      radial-gradient(ellipse 60% 70% at 20% 70%, hsl(234 60% 93% / 0.5) 0%, transparent 55%),
+      linear-gradient(160deg, hsl(40 50% 97%) 0%, hsl(240 40% 96%) 50%, hsl(262 35% 95%) 100%);
+  }
+  .hero-gradient-dark {
+    background:
+      radial-gradient(ellipse 70% 60% at 60% 30%, hsl(234 60% 20% / 0.4) 0%, transparent 60%),
+      radial-gradient(ellipse 50% 60% at 20% 70%, hsl(262 50% 18% / 0.35) 0%, transparent 55%),
+      linear-gradient(160deg, hsl(216 18% 7%) 0%, hsl(216 25% 10%) 60%, hsl(222 40% 11%) 100%);
+  }
+
+  /* ── Text gradient ─── */
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, hsl(234 60% 55%), hsl(262 50% 65%));
+  }
+  .dark .text-gradient {
+    background-image: linear-gradient(135deg, hsl(234 70% 68%), hsl(262 60% 72%));
+  }
+
+  /* ── Hover lift ─── */
+  .hover-lift {
+    @apply transition-all duration-300;
+  }
+  .hover-lift:hover {
+    transform: translateY(-4px);
+  }
+
+  /* ── Dotted grid overlay ─── */
+  .dot-grid {
+    background-image: radial-gradient(circle, hsl(234 40% 60% / 0.12) 1px, transparent 1px);
+    background-size: 28px 28px;
+  }
+  .dark .dot-grid {
+    background-image: radial-gradient(circle, hsl(234 70% 65% / 0.08) 1px, transparent 1px);
+  }
+
+  /* ── Badge pulse ring ─── */
+  .pulse-ring {
+    animation: pulseRing 2.5s ease-in-out infinite;
+  }
+
+  /* ── Shimmer line ─── */
+  .shimmer-line {
+    position: relative;
+    overflow: hidden;
+  }
+  .shimmer-line::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, transparent 0%, hsl(0 0% 100% / 0.18) 50%, transparent 100%);
+    transform: translateX(-100%);
+    animation: shimmer 3s ease-in-out infinite;
+  }
+}
+
+/* ── Keyframes ─────────────────────────────────────────────────────── */
+@keyframes pulseRing {
+  0%   { box-shadow: 0 0 0 0 hsl(var(--primary) / 0.35); }
+  70%  { box-shadow: 0 0 0 8px hsl(var(--primary) / 0); }
+  100% { box-shadow: 0 0 0 0 hsl(var(--primary) / 0); }
+}
+
+@keyframes shimmer {
+  0%   { transform: translateX(-100%); }
+  50%  { transform: translateX(100%); }
+  100% { transform: translateX(100%); }
+}
+
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  33%       { transform: translateY(-10px) rotate(1deg); }
+  66%       { transform: translateY(-5px) rotate(-0.5deg); }
+}
+
+@keyframes morph {
+  0%   { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+  50%  { border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%; }
+  100% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+}
+
+@keyframes orbit {
+  from { transform: rotate(0deg) translateX(90px) rotate(0deg); }
+  to   { transform: rotate(360deg) translateX(90px) rotate(-360deg); }
+}
+
+@keyframes typewriter-cursor {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+
+/* Floating animation utility */
+.animate-float {
+  animation: float-slow 7s ease-in-out infinite;
+}
+.animate-morph {
+  animation: morph 10s ease-in-out infinite;
+}
