@@ -32,7 +32,7 @@ const FounderSection = () => {
                 Shiful Islam <span className="text-indigo-600 dark:text-indigo-400 font-medium italic">(Shayel)</span>
               </h3>
               <p className="text-muted-foreground font-medium mt-1">
-                Founder & CEO, WF Technology
+                Founder & CEO, Work Force Technology
               </p>
             </div>
 

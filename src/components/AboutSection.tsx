@@ -57,7 +57,7 @@ const AboutSection = () => {
 
             <div className="space-y-6 max-w-xl">
               <p className="text-muted-foreground text-lg leading-relaxed">
-                WF Technology is more than just a software firm or an electronics shop.
+                Work Force Technology (WF Technology) is more than just a software firm or an electronics shop.
                 We are a <span className="text-foreground font-semibold">Specialized R&D Hub</span> founded to solve complex integration challenges that ordinary agencies shy away from.
               </p>
 

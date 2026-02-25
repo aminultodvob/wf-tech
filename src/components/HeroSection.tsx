@@ -288,7 +288,7 @@ const HeroSection = () => {
               transition={{ duration: 0.6, delay: 0.35 }}
               className="mt-5 text-muted-foreground text-base sm:text-[1.05rem] leading-[1.75] max-w-lg"
             >
-              WF Technology is a full-service engineering studio. We build
+              Work Force Technology is a full-service engineering studio. We build
               intelligent IoT systems, custom electronics, and enterprise software —
               bridging the physical and digital worlds with precision and care.
             </motion.p>
